@@ -1,0 +1,639 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x3d997d5726309407C1908Ae5eEADEaCb79CF5eAA",
+    "txHash": "0xdb85d12a52200398d67889e43838e3a916d28a216023be0d3e781634dc310a0a"
+  },
+  "proxies": [
+    {
+      "address": "0xE9406B9Aa03c97e6Da03398d936DF4C6A2c4065D",
+      "txHash": "0xd83c1f464b65b807abc09b87d421f4271ae994f336a734976375d9fb2867ff80",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x59A7A83BF562cF98dAbb648272D1B75b37Cf8D6E",
+      "txHash": "0x9395c0836c226cd8da3745bb37e3cf60da23489b0450bfb71a3eadeb4543ef5d",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "141ce387c6eb0ce9846ac67bd860162a55cc7b16a7280bd3dc4b84914a3a32bc": {
+      "address": "0xbD06Ea11Ce3F5F532dAea1A5edD983fCEEb90771",
+      "txHash": "0x4055bd184c931d9084dc38f94fb93a0bbf34a9ac80ddcbb7b6e47000bd7899d9",
+      "layout": {
+        "storage": [
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "chainId",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:12"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "fee_percent",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:14"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "minimum_fee_amount",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:15"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "admin",
+            "type": "t_address",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:17"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "penalty_amount",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:19"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "penalty_wallet",
+            "type": "t_address",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:21"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "erc20",
+            "type": "t_contract(IERC20)16",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:23"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_addresses",
+            "type": "t_array(t_string_storage)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:41"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_locktimes",
+            "type": "t_array(t_uint256)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:42"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_deleted",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:43"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_requests",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:44"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "requests",
+            "type": "t_array(t_struct(Request)59_storage)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:46"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "user_requests",
+            "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:48"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "bridge_operators",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:50"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "operating_limits",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:51"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "proccessed_txd_hashes",
+            "type": "t_mapping(t_bytes32,t_bool)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:53"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IERC20)16": {
+            "label": "contract IERC20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)"
+          },
+          "t_array(t_struct(Request)59_storage)dyn_storage": {
+            "label": "struct ERC20TokenBridge.Request[]"
+          },
+          "t_struct(Request)59_storage": {
+            "label": "struct ERC20TokenBridge.Request",
+            "members": [
+              {
+                "label": "deposit_address_id",
+                "type": "t_uint256"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "amount_hash",
+                "type": "t_bytes32"
+              },
+              {
+                "label": "txdHash",
+                "type": "t_bytes32"
+              },
+              {
+                "label": "valid_until",
+                "type": "t_uint256"
+              },
+              {
+                "label": "prove_timestamp",
+                "type": "t_uint256"
+              },
+              {
+                "label": "to",
+                "type": "t_address"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(RequestStatus)37"
+              },
+              {
+                "label": "from",
+                "type": "t_string_storage"
+              },
+              {
+                "label": "txHash",
+                "type": "t_string_storage"
+              }
+            ]
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_enum(RequestStatus)37": {
+            "label": "enum ERC20TokenBridge.RequestStatus",
+            "members": [
+              "Init",
+              "Proved",
+              "Rejected",
+              "Expired",
+              "Released"
+            ]
+          },
+          "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+            "label": "mapping(address => uint256[])"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_bytes32,t_bool)": {
+            "label": "mapping(bytes32 => bool)"
+          }
+        }
+      }
+    },
+    "5078cec2eab12a8069b65f1dc5cbfe27a5b93f65b9d91108a05bda3872855a37": {
+      "address": "0x9ff01c72fe188D97c43724fC74669A683cB996c6",
+      "txHash": "0x0d9b068e1174bda6b666cf444df959cc6782f2c44767ce4ed9c5b8042a74ad23",
+      "layout": {
+        "storage": [
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "chainId",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:12"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "fee_percent",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:14"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "minimum_fee_amount",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:15"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "admin",
+            "type": "t_address",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:17"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "penalty_amount",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:19"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "penalty_wallet",
+            "type": "t_address",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:21"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "erc20",
+            "type": "t_contract(IERC20)16",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:23"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_addresses",
+            "type": "t_array(t_string_storage)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:41"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_locktimes",
+            "type": "t_array(t_uint256)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:42"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_deleted",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:43"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_requests",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:44"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "requests",
+            "type": "t_array(t_struct(Request)59_storage)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:46"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "user_requests",
+            "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:48"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "bridge_operators",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:50"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "operating_limits",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:51"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "proccessed_txd_hashes",
+            "type": "t_mapping(t_bytes32,t_bool)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:53"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IERC20)16": {
+            "label": "contract IERC20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)"
+          },
+          "t_array(t_struct(Request)59_storage)dyn_storage": {
+            "label": "struct ERC20TokenBridge.Request[]"
+          },
+          "t_struct(Request)59_storage": {
+            "label": "struct ERC20TokenBridge.Request",
+            "members": [
+              {
+                "label": "deposit_address_id",
+                "type": "t_uint256"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "amount_hash",
+                "type": "t_bytes32"
+              },
+              {
+                "label": "txdHash",
+                "type": "t_bytes32"
+              },
+              {
+                "label": "valid_until",
+                "type": "t_uint256"
+              },
+              {
+                "label": "prove_timestamp",
+                "type": "t_uint256"
+              },
+              {
+                "label": "to",
+                "type": "t_address"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(RequestStatus)37"
+              },
+              {
+                "label": "from",
+                "type": "t_string_storage"
+              },
+              {
+                "label": "txHash",
+                "type": "t_string_storage"
+              }
+            ]
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_enum(RequestStatus)37": {
+            "label": "enum ERC20TokenBridge.RequestStatus",
+            "members": [
+              "Init",
+              "Proved",
+              "Rejected",
+              "Expired",
+              "Released"
+            ]
+          },
+          "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+            "label": "mapping(address => uint256[])"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_bytes32,t_bool)": {
+            "label": "mapping(bytes32 => bool)"
+          }
+        }
+      }
+    },
+    "a5ebe5fa442a789faae6e6625783de8d30ef73b29fe706c10e74972cae302f99": {
+      "address": "0x1d404c96aEf0a265E8A9521f3ecaF715e12325F3",
+      "txHash": "0x572d2b53296c8d2b381a70ad095c1f252cefd133b8f7044e6bbece9e3925ecc1",
+      "layout": {
+        "storage": [
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "chainId",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:12"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "fee_percent",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:14"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "minimum_fee_amount",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:15"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "admin",
+            "type": "t_address",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:17"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "penalty_amount",
+            "type": "t_uint256",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:21"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "penalty_wallet",
+            "type": "t_address",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:23"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "erc20",
+            "type": "t_contract(IERC20)16",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:25"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_addresses",
+            "type": "t_array(t_string_storage)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:43"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_locktimes",
+            "type": "t_array(t_uint256)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:44"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_deleted",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:45"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "deposit_address_requests",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:46"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "requests",
+            "type": "t_array(t_struct(Request)59_storage)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:48"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "user_requests",
+            "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:50"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "bridge_operators",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:52"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "operating_limits",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:53"
+          },
+          {
+            "contract": "ERC20TokenBridge",
+            "label": "proccessed_txd_hashes",
+            "type": "t_mapping(t_bytes32,t_bool)",
+            "src": "../project:/contracts/ERC20TokenBridge.sol:55"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IERC20)16": {
+            "label": "contract IERC20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)"
+          },
+          "t_array(t_struct(Request)59_storage)dyn_storage": {
+            "label": "struct ERC20TokenBridge.Request[]"
+          },
+          "t_struct(Request)59_storage": {
+            "label": "struct ERC20TokenBridge.Request",
+            "members": [
+              {
+                "label": "deposit_address_id",
+                "type": "t_uint256"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "amount_hash",
+                "type": "t_bytes32"
+              },
+              {
+                "label": "txdHash",
+                "type": "t_bytes32"
+              },
+              {
+                "label": "valid_until",
+                "type": "t_uint256"
+              },
+              {
+                "label": "prove_timestamp",
+                "type": "t_uint256"
+              },
+              {
+                "label": "to",
+                "type": "t_address"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(RequestStatus)37"
+              },
+              {
+                "label": "from",
+                "type": "t_string_storage"
+              },
+              {
+                "label": "txHash",
+                "type": "t_string_storage"
+              }
+            ]
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_enum(RequestStatus)37": {
+            "label": "enum ERC20TokenBridge.RequestStatus",
+            "members": [
+              "Init",
+              "Proved",
+              "Rejected",
+              "Expired",
+              "Released"
+            ]
+          },
+          "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+            "label": "mapping(address => uint256[])"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_bytes32,t_bool)": {
+            "label": "mapping(bytes32 => bool)"
+          }
+        }
+      }
+    }
+  }
+}
