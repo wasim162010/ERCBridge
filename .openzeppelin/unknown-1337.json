@@ -14,6 +14,26 @@
       "address": "0x59A7A83BF562cF98dAbb648272D1B75b37Cf8D6E",
       "txHash": "0x9395c0836c226cd8da3745bb37e3cf60da23489b0450bfb71a3eadeb4543ef5d",
       "kind": "transparent"
+    },
+    {
+      "address": "0xe87B275057C192cB36aE13e78Dd78Abf504e3AD8",
+      "txHash": "0x84482e9e41c46e8aac86d0b3c485e50f3372f7c78ef44f954b94bbc422de1342",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x8B1a4Fd300c300FbC2F8D7F62F7E7347739855b3",
+      "txHash": "0xd2c8aad800b311ccffcfffeae4480a15e847feeda61e9e640d00a0f30b7ec1a2",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x53C67178144CA9B54e33497dBd4B3E3D89f90Fb4",
+      "txHash": "0x38096cfed210054ccb2ee4868970b70379c60e32456deea85d57919bddb5483c",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x26A6c35e74644F05323b787776f922431d543635",
+      "txHash": "0x6e77340c5f38882c4b9264f2522af842ceb44c320ac5e8e8bcab887849ff6415",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -631,6 +651,73 @@
           },
           "t_mapping(t_bytes32,t_bool)": {
             "label": "mapping(bytes32 => bool)"
+          }
+        }
+      }
+    },
+    "e30c4d51856abeaf942be0ba450292d71b767492b23282c3426e26601e3ccb8c": {
+      "address": "0x0Ce692f74e54CEB072bf9Dce2d62FC65ca43E243",
+      "txHash": "0x790e1ee7c04eb3ecd442582d3bc72ee8c6d7e4dea56f5f011da2892df2b66f73",
+      "layout": {
+        "storage": [
+          {
+            "contract": "SimpleERC20Bridge",
+            "label": "chainId",
+            "type": "t_uint256",
+            "src": "../project:/contracts/SimpleERC20Bridge.sol:9"
+          },
+          {
+            "contract": "SimpleERC20Bridge",
+            "label": "transaction_fee",
+            "type": "t_uint256",
+            "src": "../project:/contracts/SimpleERC20Bridge.sol:10"
+          },
+          {
+            "contract": "SimpleERC20Bridge",
+            "label": "admin",
+            "type": "t_address",
+            "src": "../project:/contracts/SimpleERC20Bridge.sol:11"
+          },
+          {
+            "contract": "SimpleERC20Bridge",
+            "label": "erc20",
+            "type": "t_contract(IERC20)1320",
+            "src": "../project:/contracts/SimpleERC20Bridge.sol:12"
+          },
+          {
+            "contract": "SimpleERC20Bridge",
+            "label": "processedNonces",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_bool))",
+            "src": "../project:/contracts/SimpleERC20Bridge.sol:13"
+          },
+          {
+            "contract": "SimpleERC20Bridge",
+            "label": "nonces",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../project:/contracts/SimpleERC20Bridge.sol:14"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IERC20)1320": {
+            "label": "contract IERC20"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_bool))": {
+            "label": "mapping(address => mapping(uint256 => bool))"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
           }
         }
       }
