@@ -12,7 +12,7 @@ contract ERC20TokenBridge {
   uint chainId;
   
   uint public fee_percent; // 0.5 %
-  uint public minimum_fee_amount ; // 50 WJXN
+  uint public minimum_fee_amount ; 
 
   address public admin;
 
@@ -73,8 +73,6 @@ contract ERC20TokenBridge {
       
     fee_percent = 5e5;
     minimum_fee_amount = 50;
-
-   // erc20 = IERC20(_addr);
 
     admin = msg.sender;
     uint _chainId;
