@@ -139,21 +139,25 @@ contract ERC20TokenBridge {
   }
 
   function prove_request(uint request_id, string calldata tx_hash) external {
+    
     Request storage request = requests[request_id];
     require(request.to == msg.sender, "Invalid account");
     require(request.status == RequestStatus.Init, "Invalid status");
+    
     if(request.valid_until < block.timestamp) {
       request.status = RequestStatus.Expired;
       request.prove_timestamp = block.timestamp;
       emit Expire_Request(request_id);
       return;
     }
+
     bytes32 txdHash = keccak256(abi.encodePacked(tx_hash));
     require(proccessed_txd_hashes[txdHash] == false, "Invalid tx hash");
     request.txdHash = txdHash;
     request.status = RequestStatus.Proved;
     request.prove_timestamp = block.timestamp;
     request.amount = 0;
+
     emit Prove_Request(request_id, tx_hash);
   }
 
@@ -180,11 +184,13 @@ contract ERC20TokenBridge {
         require(request.amount_hash == keccak256(abi.encodePacked(request_id, amount)), "Incorrect amount");
         require(keccak256(abi.encodePacked(request.from)) == keccak256(abi.encodePacked(from)), "Sender's address mismatch");
         require(request.to == to, "destination address mismatch");
+
         request.txHash = txHash;
         deposit_address_locktimes[request.deposit_address_id] = 0;
         request.amount = amount;
         request.status = RequestStatus.Released;
         proccessed_txd_hashes[request.txdHash] = true;
+        
         uint fee_amount = request.amount * fee_percent / 1e8;
         if(fee_amount < minimum_fee_amount) fee_amount = minimum_fee_amount;
         erc20.mint(address(this), request.amount - fee_amount);
